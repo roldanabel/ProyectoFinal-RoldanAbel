@@ -33,14 +33,6 @@ function leerDatosProducto(producto) {
   // bajar datos del LOCALSTORAGE 
   const deJson = localStorage.getItem("infoProducto");
   console.log(JSON.parse(deJson));
-  Toastify({
-    text: "Producto agregado",
-    className: "info",
-    style: {
-      background: "linear-gradient(to right, #7CFC00, #32CD32)",
-    }
-  }).showToast();
-  
 }
 
 //Mostrar los productos en el carrito
@@ -79,30 +71,6 @@ function eliminarProducto(e) {
     );
     carritoHTML();
   }
-  Toastify({
-    text: "Producto eliminado",
-    className: "info",
-    style: {
-      background: "linear-gradient(to right, #DC143C, #FF0000)",
-    }
-  }).showToast();
 }
 
-const lista = document.querySelector("#listado");
 
-const pedirPost = async () => {
-  const resp = await fetch("https://jsonplaceholder.typicode.com/posts");
-  const data = await resp.json();
-
-  data.forEach((post) => {
-    const li = document.createElement("li");
-    li.innerHTML = `
-        <h4>${post.title}</h4>
-        <h5>${post.body}</h5>
-
-        `;
-    lista.append(li);
-  });
-};
-
-pedirPost(); 
