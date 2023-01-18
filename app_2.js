@@ -91,14 +91,14 @@ function eliminarProducto(e) {
 const lista = document.querySelector("#listado");
 
 const pedirPost = async () => {
-  const resp = await fetch("https://jsonplaceholder.typicode.com/posts");
+  const resp = await fetch("data.json");
   const data = await resp.json();
 
   data.forEach((post) => {
     const li = document.createElement("li");
     li.innerHTML = `
-        <h4>${post.title}</h4>
-        <h5>${post.body}</h5>
+        <h4>${post.nombre}</h4>
+        <h5>${post.precio}</h5>
 
         `;
     lista.append(li);
